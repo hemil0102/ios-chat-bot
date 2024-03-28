@@ -33,21 +33,6 @@ struct Choice: Decodable {
     }
 }
 
-struct Message: Decodable {
-    let content: String?
-    let toolCalls: [ToolCalls]
-    let role: String
-}
-
-struct ToolCalls: Decodable {
-    let id, type: String
-    let function: Function
-}
-
-struct Function: Decodable {
-    let name, arguments: String
-}
-
 struct Logprobs: Decodable {
     let content: [Content]?
 }
