@@ -13,6 +13,14 @@
 		B4B3E2C42B42D1BB00818B3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B3E2C22B42D1BB00818B3C /* Main.storyboard */; };
 		B4B3E2C62B42D1BC00818B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B3E2C52B42D1BC00818B3C /* Assets.xcassets */; };
 		B4B3E2C92B42D1BC00818B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B3E2C72B42D1BC00818B3C /* LaunchScreen.storyboard */; };
+		C7107CE42BB432B300A166C0 /* GPTResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7107CE32BB432B300A166C0 /* GPTResponseDTO.swift */; };
+		C7107CE62BB432DE00A166C0 /* GPTRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7107CE52BB432DE00A166C0 /* GPTRequestDTO.swift */; };
+		C7107CE92BB434BC00A166C0 /* JsonDecodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7107CE82BB434BC00A166C0 /* JsonDecodableProtocol.swift */; };
+		C7107CEB2BB434CA00A166C0 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7107CEA2BB434CA00A166C0 /* JsonDecoder.swift */; };
+		C7107CEF2BB4353C00A166C0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7107CEE2BB4353C00A166C0 /* NetworkError.swift */; };
+		C7107CF22BB435B700A166C0 /* responseData.json in Resources */ = {isa = PBXBuildFile; fileRef = C7107CF02BB435B700A166C0 /* responseData.json */; };
+		C79F5A382BB4FD66009E3AB4 /* JsonEncodableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F5A372BB4FD66009E3AB4 /* JsonEncodableProtocol.swift */; };
+		C79F5A3A2BB4FD7D009E3AB4 /* JsonEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F5A392BB4FD7D009E3AB4 /* JsonEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		B4B3E2C52B42D1BC00818B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4B3E2C82B42D1BC00818B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4B3E2CA2B42D1BC00818B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7107CE32BB432B300A166C0 /* GPTResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponseDTO.swift; sourceTree = "<group>"; };
+		C7107CE52BB432DE00A166C0 /* GPTRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTRequestDTO.swift; sourceTree = "<group>"; };
+		C7107CE82BB434BC00A166C0 /* JsonDecodableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodableProtocol.swift; sourceTree = "<group>"; };
+		C7107CEA2BB434CA00A166C0 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
+		C7107CEE2BB4353C00A166C0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C7107CF12BB435B700A166C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/responseData.json; sourceTree = "<group>"; };
+		C79F5A372BB4FD66009E3AB4 /* JsonEncodableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonEncodableProtocol.swift; sourceTree = "<group>"; };
+		C79F5A392BB4FD7D009E3AB4 /* JsonEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +76,51 @@
 				B4B3E2BE2B42D1BB00818B3C /* SceneDelegate.swift */,
 				B4B3E2C02B42D1BB00818B3C /* ViewController.swift */,
 				B4B3E2C22B42D1BB00818B3C /* Main.storyboard */,
+				C7107CEC2BB4350F00A166C0 /* DTO */,
+				C7107CE72BB4348D00A166C0 /* Serializer */,
+				C7107CED2BB4352400A166C0 /* Error */,
+				C7107CF32BB4365E00A166C0 /* TestJson */,
 				B4B3E2C52B42D1BC00818B3C /* Assets.xcassets */,
 				B4B3E2C72B42D1BC00818B3C /* LaunchScreen.storyboard */,
 				B4B3E2CA2B42D1BC00818B3C /* Info.plist */,
 			);
 			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		C7107CE72BB4348D00A166C0 /* Serializer */ = {
+			isa = PBXGroup;
+			children = (
+				C7107CE82BB434BC00A166C0 /* JsonDecodableProtocol.swift */,
+				C7107CEA2BB434CA00A166C0 /* JsonDecoder.swift */,
+				C79F5A372BB4FD66009E3AB4 /* JsonEncodableProtocol.swift */,
+				C79F5A392BB4FD7D009E3AB4 /* JsonEncoder.swift */,
+			);
+			path = Serializer;
+			sourceTree = "<group>";
+		};
+		C7107CEC2BB4350F00A166C0 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C7107CE32BB432B300A166C0 /* GPTResponseDTO.swift */,
+				C7107CE52BB432DE00A166C0 /* GPTRequestDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		C7107CED2BB4352400A166C0 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C7107CEE2BB4353C00A166C0 /* NetworkError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		C7107CF32BB4365E00A166C0 /* TestJson */ = {
+			isa = PBXGroup;
+			children = (
+				C7107CF02BB435B700A166C0 /* responseData.json */,
+			);
+			path = TestJson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4B3E2C92B42D1BC00818B3C /* LaunchScreen.storyboard in Resources */,
+				C7107CF22BB435B700A166C0 /* responseData.json in Resources */,
 				B4B3E2C62B42D1BC00818B3C /* Assets.xcassets in Resources */,
 				B4B3E2C42B42D1BB00818B3C /* Main.storyboard in Resources */,
 			);
@@ -138,7 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79F5A3A2BB4FD7D009E3AB4 /* JsonEncoder.swift in Sources */,
+				C7107CEB2BB434CA00A166C0 /* JsonDecoder.swift in Sources */,
+				C7107CEF2BB4353C00A166C0 /* NetworkError.swift in Sources */,
+				C79F5A382BB4FD66009E3AB4 /* JsonEncodableProtocol.swift in Sources */,
+				C7107CE62BB432DE00A166C0 /* GPTRequestDTO.swift in Sources */,
+				C7107CE92BB434BC00A166C0 /* JsonDecodableProtocol.swift in Sources */,
 				B4B3E2C12B42D1BB00818B3C /* ViewController.swift in Sources */,
+				C7107CE42BB432B300A166C0 /* GPTResponseDTO.swift in Sources */,
 				B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */,
 				B4B3E2BF2B42D1BB00818B3C /* SceneDelegate.swift in Sources */,
 			);
@@ -161,6 +225,14 @@
 				B4B3E2C82B42D1BC00818B3C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C7107CF02BB435B700A166C0 /* responseData.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7107CF12BB435B700A166C0 /* en */,
+			);
+			name = responseData.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
