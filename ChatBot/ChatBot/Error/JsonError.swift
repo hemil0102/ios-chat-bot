@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkError: LocalizedError {
+enum JsonError: LocalizedError {
     case decodingError
     case encodingError
     

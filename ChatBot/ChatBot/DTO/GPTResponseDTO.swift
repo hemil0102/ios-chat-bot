@@ -1,6 +1,5 @@
 import Foundation
 
-// MARK: - GPTResponseDTO
 struct GPTResponseDTO: Decodable {
     let id, object: String
     let created: Int
@@ -15,11 +14,10 @@ struct GPTResponseDTO: Decodable {
     }
 }
 
-// MARK: - Choice
 struct Choice: Decodable {
     let index: Int
     let message: Message
-    let logprobs: String?
+    let logprobs: Logprobs?
     let finishReason: String
 
     enum CodingKeys: String, CodingKey {
@@ -28,12 +26,23 @@ struct Choice: Decodable {
     }
 }
 
-// MARK: - Message
-struct Message: Codable {
-    let role, content: String
+struct Logprobs: Decodable {
+    let content: [Content]?
 }
 
-// MARK: - Usage
+struct Content: Decodable {
+    let token: String
+    let logprob: Double
+    let bytes: [Int]?
+    let topLogprobs: [TopLogprobs]
+}
+
+struct TopLogprobs: Decodable {
+    let token: String
+    let logprob: Double
+    let buyes: [Int]?
+}
+
 struct Usage: Decodable {
     let promptTokens, completionTokens, totalTokens: Int
 

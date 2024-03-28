@@ -1,8 +1,8 @@
 import Foundation
 
 // MARK: - GPTRequestDTO
-struct GPTRequestDTO: Encodable {
-    let model: String
+struct GPTRequestDTO: Codable {
+    let model: GPTModel
     let messages: [Message]
     let logprobs: Bool?
     
@@ -10,3 +10,5 @@ struct GPTRequestDTO: Encodable {
         case model, messages, logprobs
     }
 }
+
+

@@ -18,14 +18,14 @@ class ViewController: UIViewController {
         print(makeHTTPBody())
     }
     
-    private func makeHTTPBody() -> Result<Data?, NetworkError> {
-        let file = GPTRequestDTO(model: "gpt-3.5-turbo-1106", messages: [Message(role: "system", content: "You are an assistant that occasionally misspells words"), Message(role: "user", content: "Tell me a story.")], logprobs: nil)
+    private func makeHTTPBody() -> Result<Data?, JsonError> {
+        let file = GPTRequestDTO(model: .basic, messages: [Message(role: .system, content: "You are an assistant that occasionally misspells words", toolCalls: nil), Message(role: .user, content: "Tell me a story.", toolCalls: nil)], logprobs: nil)
         
         return jsonEncoder.encode(of: file)
     }
     
     private func loadData() {
-        let result: Result<GPTResponseDTO, NetworkError> = jsonDecoder.decode(fileName: "responseData", fileType: "json")
+        let result: Result<GPTResponseDTO, JsonError> = jsonDecoder.decode(fileName: "responseData", fileType: "json")
         switch result {
         case .success(let data):
             print(data)

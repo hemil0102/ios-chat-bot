@@ -8,7 +8,7 @@ class JsonEncoder: JsonEncodableProtocol {
         self.jsonEncoder = jsonEncoder
     }
     
-    func encode<T: Encodable>(of file: T) -> Result<Data?, NetworkError> {
+    func encode<T: Encodable>(of file: T) -> Result<Data?, JsonError> {
         guard let encodedData = try? jsonEncoder.encode(file) else { return .failure(.encodingError) }
         return .success(encodedData)
     }
