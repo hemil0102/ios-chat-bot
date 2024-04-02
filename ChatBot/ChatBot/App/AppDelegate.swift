@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ChatBot
-//
-//  Created by Tacocat on 1/1/24.
-//
-
 import UIKit
 
 @main
@@ -18,4 +11,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) { }
+}
+
+var ENV: APIKey {
+    return DebugEnvironment(resourceName: "DEBUG-Keys")
 }
