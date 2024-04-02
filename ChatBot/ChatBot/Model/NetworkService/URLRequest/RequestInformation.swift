@@ -25,10 +25,10 @@ enum RequestInformation {
         }
     }
     
-    var hTTPBody: Data? {
+    var httpBody: Data? {
         switch self {
         case .completion(let model, let messages, let logprobs):
-            let comment = GPTRequestDTO(model: .basic, messages: messages, logprobs: logprobs)
+            let comment = GPTRequestDTO(model: model, messages: messages, logprobs: logprobs)
             guard let uploadData = try? JSONEncoder().encode(comment) else { return nil }
             return uploadData
         }

@@ -93,10 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				C7CCB54C2BBACF8500BD2C59 /* App */,
+				C7DE45322BBBDD5C0087C6C3 /* Model */,
 				C7CCB54E2BBACFB600BD2C59 /* Controller */,
-				F39BA7EC2BB573BE0058257C /* DTO */,
-				C7CCB5322BBAB5BA00BD2C59 /* NetworkService */,
-				F39BA7F62BB576380058257C /* Error */,
 				C7CCB5492BBAC9FD00BD2C59 /* Constants */,
 				C79F5A482BB58605009E3AB4 /* TestJson */,
 				C7CCB5472BBAC9C500BD2C59 /* Private */,
@@ -189,6 +187,16 @@
 				B4B3E2C02B42D1BB00818B3C /* ChatGPTViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C7DE45322BBBDD5C0087C6C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F39BA7EC2BB573BE0058257C /* DTO */,
+				C7CCB5322BBAB5BA00BD2C59 /* NetworkService */,
+				F39BA7F62BB576380058257C /* Error */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F39BA7EC2BB573BE0058257C /* DTO */ = {
