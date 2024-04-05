@@ -3,7 +3,7 @@ import Combine
 
 final class ChatGPTViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
-    private let mapper: Mappable = Mapper(dataDecoder: DataDecoder(networkManager: NetworkManager()))
+    private let usecase: ChatGPTUseCaseProtocol = ChatGPTUseCase(mapper: Mapper(dataDecoder: DataDecoder(networkManager: NetworkManager())))
     private let messages = [
         Message(role: .system, content: "안녕 너는 나와 아무 주제에 대해서 이야기할텐데, 나의 이름을 대화 내내 기억해야해, 답변은 30글자 내로 해줘", toolCalls: nil),
         Message(role: .user, content: "안녕 나의 이름은 Harry야, Jin 그리고 July와 함께 챗봇을 만드는 중이야! 마지막 프로젝트인데 어렵고 넘모 힘들다~ 웅우엉웅웡",
@@ -21,11 +21,11 @@ final class ChatGPTViewController: UIViewController {
     }
     
     private func printChatGPTAnswer(with messages: [Message]) {
-        mapper.mapChatGPTContent(with: messages)
+        usecase.fetchChatGPTContent(with: messages)
             .sink { completion in
                 print(completion)
             } receiveValue: { value in
-                print(value)
+                print(value.content)
             }
             .store(in: &cancellables)
     }

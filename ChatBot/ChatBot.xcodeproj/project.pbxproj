@@ -17,6 +17,9 @@
 		C764C3A32BBFC8EE007AA7B8 /* DataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A22BBFC8EE007AA7B8 /* DataDecodable.swift */; };
 		C764C3A52BBFC8F6007AA7B8 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A42BBFC8F6007AA7B8 /* DataDecoder.swift */; };
 		C764C3A72BBFC90E007AA7B8 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A62BBFC90E007AA7B8 /* Mappable.swift */; };
+		C76D84372BC0276F0060A048 /* GPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D84362BC0276F0060A048 /* GPTResponse.swift */; };
+		C76D84392BC0280D0060A048 /* ChatGPTUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D84382BC0280D0060A048 /* ChatGPTUseCase.swift */; };
+		C76D843C2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D843B2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift */; };
 		C79F5A432BB5851D009E3AB4 /* GPTRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F5A422BB5851D009E3AB4 /* GPTRequestDTO.swift */; };
 		C7DE45392BBC196D0087C6C3 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE45382BBC196D0087C6C3 /* Requestable.swift */; };
 		C7DE453B2BBC19820087C6C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE453A2BBC19820087C6C3 /* NetworkManager.swift */; };
@@ -49,6 +52,9 @@
 		C764C3A22BBFC8EE007AA7B8 /* DataDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecodable.swift; sourceTree = "<group>"; };
 		C764C3A42BBFC8F6007AA7B8 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		C764C3A62BBFC90E007AA7B8 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		C76D84362BC0276F0060A048 /* GPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponse.swift; sourceTree = "<group>"; };
+		C76D84382BC0280D0060A048 /* ChatGPTUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTUseCase.swift; sourceTree = "<group>"; };
+		C76D843B2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTUseCaseProtocol.swift; sourceTree = "<group>"; };
 		C79F5A422BB5851D009E3AB4 /* GPTRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTRequestDTO.swift; sourceTree = "<group>"; };
 		C7DE45382BBC196D0087C6C3 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		C7DE453A2BBC19820087C6C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -99,8 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				C7DE45492BBC26820087C6C3 /* App */,
-				C7DE45482BBC26720087C6C3 /* Controller */,
-				C7DE45362BBC189C0087C6C3 /* Model */,
+				C76D84322BC026BF0060A048 /* Presentation */,
+				C76D84332BC026F20060A048 /* Domain */,
+				C7DE45362BBC189C0087C6C3 /* Data */,
 				B4B3E2C22B42D1BB00818B3C /* Main.storyboard */,
 				B4B3E2C52B42D1BC00818B3C /* Assets.xcassets */,
 				B4B3E2C72B42D1BC00818B3C /* LaunchScreen.storyboard */,
@@ -127,6 +134,41 @@
 			path = Decoder;
 			sourceTree = "<group>";
 		};
+		C76D84322BC026BF0060A048 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7DE45482BBC26720087C6C3 /* Controller */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C76D84332BC026F20060A048 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C76D84342BC0270E0060A048 /* Entity */,
+				C76D84352BC027180060A048 /* Usecase */,
+				C764C39E2BBFC8A7007AA7B8 /* Mapper */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C76D84342BC0270E0060A048 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C76D84362BC0276F0060A048 /* GPTResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C76D84352BC027180060A048 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				C76D843B2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift */,
+				C76D84382BC0280D0060A048 /* ChatGPTUseCase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
 		C7DE45332BBC18820087C6C3 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,10 +179,9 @@
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
-		C7DE45362BBC189C0087C6C3 /* Model */ = {
+		C7DE45362BBC189C0087C6C3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C764C39E2BBFC8A7007AA7B8 /* Mapper */,
 				C764C3A12BBFC8C7007AA7B8 /* Decoder */,
 				F39BA7EC2BB573BE0058257C /* DTO */,
 				C7DE45332BBC18820087C6C3 /* NetworkService */,
@@ -148,7 +189,7 @@
 				C7DE45452BBC25FC0087C6C3 /* Constant */,
 				C7DE45422BBC25880087C6C3 /* Private */,
 			);
-			path = Model;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C7DE45372BBC194E0087C6C3 /* NetworkManger */ = {
@@ -320,6 +361,8 @@
 				F39BA7F02BB5744E0058257C /* GPTBody.swift in Sources */,
 				C764C3A52BBFC8F6007AA7B8 /* DataDecoder.swift in Sources */,
 				F3D2DF922BBBFB2E00BEECC0 /* URLInformation.swift in Sources */,
+				C76D84392BC0280D0060A048 /* ChatGPTUseCase.swift in Sources */,
+				C76D84372BC0276F0060A048 /* GPTResponse.swift in Sources */,
 				B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */,
 				F39BA7F52BB5762B0058257C /* NetworkError.swift in Sources */,
 				F3D2DF8C2BBBFAA900BEECC0 /* SchemeType.swift in Sources */,
@@ -329,6 +372,7 @@
 				F3D2DF8E2BBBFAEF00BEECC0 /* EndpointProvidable.swift in Sources */,
 				F3D2DF952BBC074600BEECC0 /* RequstProvidable.swift in Sources */,
 				C764C3A72BBFC90E007AA7B8 /* Mappable.swift in Sources */,
+				C76D843C2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

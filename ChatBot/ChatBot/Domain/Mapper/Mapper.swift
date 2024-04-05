@@ -8,11 +8,11 @@ final class Mapper: Mappable {
         self.dataDecoder = dataDecoder
     }
     
-    func mapChatGPTContent(with messages: [Message]) -> AnyPublisher<String, Error> {
+    func mapChatGPTContent(with messages: [Message]) -> AnyPublisher<GPTResponse, Error> {
         return dataDecoder.decodedChatGPTCompletionData(with: messages, type: GPTResponseDTO.self)
             .receive(on: RunLoop.main)
             .map { result in
-                return result.choices[0].message.content
+                return GPTResponse(content: result.choices[0].message.content)
             }
             .eraseToAnyPublisher()
     }
