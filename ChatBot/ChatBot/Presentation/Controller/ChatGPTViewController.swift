@@ -2,6 +2,8 @@ import UIKit
 import Combine
 
 final class ChatGPTViewController: UIViewController {
+    
+    //MARK: Properties
     private var cancellables = Set<AnyCancellable>()
     private let usecase: ChatGPTUseCaseProtocol = ChatGPTUseCase(mapper: Mapper(dataDecoder: DataDecoder(networkManager: NetworkManager())))
     private let messages = [
@@ -10,10 +12,26 @@ final class ChatGPTViewController: UIViewController {
                 toolCalls: nil)
     ]
     
+    //MARK: Views
+    private var collectionView: UICollectionView!
+    
+    private var chatGPTCollectionView: ChatGPTCollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, ChatDisplayModel>!
+    private var cellRegistration: UICollectionView.CellRegistration<ChatBubbleCell, ChatDisplayModel>!
+    private var contents = [ChatDisplayModel(content: "test")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         printUserQuestion(with: messages[1].content)
         printChatGPTAnswer(with: messages)
+        setupUI()
+        configureDataSource()
+        applySnapshot(content: contents, animatingDifferences: true)
+    }
+    
+    override func loadView() {
+        self.chatGPTCollectionView = ChatGPTCollectionView(frame: .zero)
+        self.view = chatGPTCollectionView
     }
     
     private func printUserQuestion(with question: String) {
@@ -30,3 +48,35 @@ final class ChatGPTViewController: UIViewController {
             .store(in: &cancellables)
     }
 }
+
+// MARK: - Apply Diffable DataSource
+private extension ChatGPTViewController {
+    func setupUI() {
+        configureCellRegistration()
+    }
+    
+    func configureCellRegistration() {
+        cellRegistration = UICollectionView.CellRegistration<ChatBubbleCell, ChatDisplayModel> { (cell, indexPath, chat) in
+            cell.contentLabel.text = chat.content
+        }
+    }
+    
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, ChatDisplayModel>(collectionView: chatGPTCollectionView) {
+            (collectionView, indexPath, chat) -> UICollectionViewCell? in
+            return collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: chat)
+        }
+        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, ChatDisplayModel>()
+        initialSnapshot.appendSections([.main])
+        dataSource.apply(initialSnapshot, animatingDifferences: false)
+    }
+    
+    func applySnapshot(content: [ChatDisplayModel], animatingDifferences: Bool) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ChatDisplayModel>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(content, toSection: .main)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+}
+
+
