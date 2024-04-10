@@ -49,7 +49,7 @@ final class ChatRoomViewController: UIViewController {
                     guard let self = self else { return }
                     history += "UserQuestion\(count): \(query)" + " "
                     print("히스토리: \(history)")
-                    self.viewModel.askQuestion(query: history)
+                    viewModel.askQuestion(query: query, history: history)
                 }
                 .store(in: &bindings)
         }
@@ -109,7 +109,6 @@ final class ChatRoomViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-
 extension ChatRoomViewController {
     private func configureDataSource() {
         dataSource = DataSource(

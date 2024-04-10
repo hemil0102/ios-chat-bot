@@ -15,7 +15,7 @@ final class ChatRoomViewModel {
     @Published private(set) var comments: [ChatRoomModel] = []
     @Published private(set) var state: ChatRoomModelState = .finishedLoading
     private var requestMessage: [Message] = [Message(role: .system, content: 
-    "UserQuestion과 GPTAnswer가 주고 받는 대화를 참고해서 답변을 해주세요!", toolCalls: nil)]
+    "당신은 이전 대화의 기록을 참고하여서 저의 이름을 항상 기억합니다. 대화 주제는 자유롭습니다.", toolCalls: nil)]
     
     private let mapper: Mappable
     private var bindings = Set<AnyCancellable>()
@@ -24,19 +24,21 @@ final class ChatRoomViewModel {
         self.mapper = mapper
     }
     
-    func askQuestion(query: String) {
-        fetchData(with: query)
+    func askQuestion(query: String, history: String) {
+        fetchData(with: query, of: history)
     }
 }
 
 //네트워크 데이터 가져오는 부분
 extension ChatRoomViewModel {
-    private func fetchData(with question: String?) {
+    private func fetchData(with question: String?, of history: String?) {
         state = .loading
+        guard let question = question, let history = history else { return }
+        
+        self.comments.append(contentsOf: [ChatRoomModel(content: question, role: .user)])
         
         let questionCompletionHandler: (Subscribers.Completion<Error>) -> Void = { [weak self]
             completion in
-            
             switch completion {
             case .failure:
                 self?.state = .error(.chattingFetch)
@@ -46,12 +48,10 @@ extension ChatRoomViewModel {
         }
         
         let questionValueHander: ([ChatRoomModel]) -> Void = { [weak self] messages in
-            self?.comments = messages
+            self?.comments.append(contentsOf: messages)
         }
-        
-        guard let question = question else { return }
     
-        requestMessage.append(Message(role: .user, content: question, toolCalls: nil))
+        requestMessage.append(Message(role: .user, content: history, toolCalls: nil))
         
         mapper.mapChatGPTContent(with: requestMessage)
             .sink(receiveCompletion: questionCompletionHandler, receiveValue: questionValueHander)

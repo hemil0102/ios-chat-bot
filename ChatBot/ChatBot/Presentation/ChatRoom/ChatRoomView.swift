@@ -29,7 +29,6 @@ final class ChatRoomView: UIView {
         collectionView.isUserInteractionEnabled = false
         chattingTextField.isUserInteractionEnabled = false
         
-        
         activityIndicationView.isHidden = false
         activityIndicationView.startAnimating()
     }
