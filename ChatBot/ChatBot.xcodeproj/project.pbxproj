@@ -9,26 +9,25 @@
 /* Begin PBXBuildFile section */
 		B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2BC2B42D1BB00818B3C /* AppDelegate.swift */; };
 		B4B3E2BF2B42D1BB00818B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2BE2B42D1BB00818B3C /* SceneDelegate.swift */; };
-		B4B3E2C12B42D1BB00818B3C /* ChatGPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2C02B42D1BB00818B3C /* ChatGPTViewController.swift */; };
+		B4B3E2C12B42D1BB00818B3C /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2C02B42D1BB00818B3C /* ChatRoomViewController.swift */; };
 		B4B3E2C62B42D1BC00818B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B3E2C52B42D1BC00818B3C /* Assets.xcassets */; };
 		B4B3E2C92B42D1BC00818B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B3E2C72B42D1BC00818B3C /* LaunchScreen.storyboard */; };
 		C764C3A02BBFC8BD007AA7B8 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C39F2BBFC8BD007AA7B8 /* Mapper.swift */; };
 		C764C3A32BBFC8EE007AA7B8 /* DataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A22BBFC8EE007AA7B8 /* DataDecodable.swift */; };
 		C764C3A52BBFC8F6007AA7B8 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A42BBFC8F6007AA7B8 /* DataDecoder.swift */; };
 		C764C3A72BBFC90E007AA7B8 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A62BBFC90E007AA7B8 /* Mappable.swift */; };
-		C76C959D2BC37D8C00AB672D /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C959C2BC37D8B00AB672D /* CustomTextFieldView.swift */; };
-		C76D84372BC0276F0060A048 /* GPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D84362BC0276F0060A048 /* GPTResponse.swift */; };
-		C76D84392BC0280D0060A048 /* ChatGPTUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D84382BC0280D0060A048 /* ChatGPTUseCase.swift */; };
-		C76D843C2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D843B2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift */; };
 		C79F5A432BB5851D009E3AB4 /* GPTRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F5A422BB5851D009E3AB4 /* GPTRequestDTO.swift */; };
 		C7DE45392BBC196D0087C6C3 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE45382BBC196D0087C6C3 /* Requestable.swift */; };
 		C7DE453B2BBC19820087C6C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE453A2BBC19820087C6C3 /* NetworkManager.swift */; };
 		C7DE45442BBC25A40087C6C3 /* DEBUG-Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7DE45432BBC25A40087C6C3 /* DEBUG-Keys.plist */; };
 		C7DE45472BBC26360087C6C3 /* KeyEnviromentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE45462BBC26360087C6C3 /* KeyEnviromentHandler.swift */; };
-		C7E95AED2BC4D1870091C03C /* ChatGPTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AEC2BC4D1870091C03C /* ChatGPTCollectionView.swift */; };
-		C7E95AF02BC4D2130091C03C /* ChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AEF2BC4D2130091C03C /* ChatBubbleCell.swift */; };
-		C7E95AF22BC4D2A30091C03C /* ChatGPTViewController+Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF12BC4D2A30091C03C /* ChatGPTViewController+Textfield.swift */; };
-		C7E95AF42BC4D6520091C03C /* ChatDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF32BC4D6520091C03C /* ChatDisplayModel.swift */; };
+		C7E95AED2BC4D1870091C03C /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AEC2BC4D1870091C03C /* ChatRoomView.swift */; };
+		C7E95AF02BC4D2130091C03C /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AEF2BC4D2130091C03C /* ChatRoomCell.swift */; };
+		C7E95AF42BC4D6520091C03C /* ChatRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF32BC4D6520091C03C /* ChatRoomModel.swift */; };
+		C7E95AF82BC5157B0091C03C /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF72BC5157B0091C03C /* ChatRoomViewModel.swift */; };
+		C7E95AFA2BC516430091C03C /* ChatRoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF92BC516430091C03C /* ChatRoomCellViewModel.swift */; };
+		C7E95AFD2BC524580091C03C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AFC2BC524580091C03C /* ActivityIndicatorView.swift */; };
+		C7E95B012BC532CE0091C03C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95B002BC532CE0091C03C /* UITextField+Publisher.swift */; };
 		F39BA7EB2BB573B10058257C /* GPTResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BA7EA2BB573B10058257C /* GPTResponseDTO.swift */; };
 		F39BA7EE2BB5740D0058257C /* GPTMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BA7ED2BB5740D0058257C /* GPTMessageDTO.swift */; };
 		F39BA7F02BB5744E0058257C /* GPTBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BA7EF2BB5744E0058257C /* GPTBody.swift */; };
@@ -47,7 +46,7 @@
 		B4B3E2B92B42D1BB00818B3C /* ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B3E2BC2B42D1BB00818B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B3E2BE2B42D1BB00818B3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B4B3E2C02B42D1BB00818B3C /* ChatGPTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTViewController.swift; sourceTree = "<group>"; };
+		B4B3E2C02B42D1BB00818B3C /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		B4B3E2C52B42D1BC00818B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4B3E2C82B42D1BC00818B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4B3E2CA2B42D1BC00818B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,19 +54,18 @@
 		C764C3A22BBFC8EE007AA7B8 /* DataDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecodable.swift; sourceTree = "<group>"; };
 		C764C3A42BBFC8F6007AA7B8 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		C764C3A62BBFC90E007AA7B8 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
-		C76C959C2BC37D8B00AB672D /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
-		C76D84362BC0276F0060A048 /* GPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponse.swift; sourceTree = "<group>"; };
-		C76D84382BC0280D0060A048 /* ChatGPTUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTUseCase.swift; sourceTree = "<group>"; };
-		C76D843B2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTUseCaseProtocol.swift; sourceTree = "<group>"; };
 		C79F5A422BB5851D009E3AB4 /* GPTRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTRequestDTO.swift; sourceTree = "<group>"; };
 		C7DE45382BBC196D0087C6C3 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		C7DE453A2BBC19820087C6C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C7DE45432BBC25A40087C6C3 /* DEBUG-Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DEBUG-Keys.plist"; sourceTree = "<group>"; };
 		C7DE45462BBC26360087C6C3 /* KeyEnviromentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEnviromentHandler.swift; sourceTree = "<group>"; };
-		C7E95AEC2BC4D1870091C03C /* ChatGPTCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTCollectionView.swift; sourceTree = "<group>"; };
-		C7E95AEF2BC4D2130091C03C /* ChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleCell.swift; sourceTree = "<group>"; };
-		C7E95AF12BC4D2A30091C03C /* ChatGPTViewController+Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatGPTViewController+Textfield.swift"; sourceTree = "<group>"; };
-		C7E95AF32BC4D6520091C03C /* ChatDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDisplayModel.swift; sourceTree = "<group>"; };
+		C7E95AEC2BC4D1870091C03C /* ChatRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
+		C7E95AEF2BC4D2130091C03C /* ChatRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCell.swift; sourceTree = "<group>"; };
+		C7E95AF32BC4D6520091C03C /* ChatRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomModel.swift; sourceTree = "<group>"; };
+		C7E95AF72BC5157B0091C03C /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
+		C7E95AF92BC516430091C03C /* ChatRoomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCellViewModel.swift; sourceTree = "<group>"; };
+		C7E95AFC2BC524580091C03C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		C7E95B002BC532CE0091C03C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		F39BA7EA2BB573B10058257C /* GPTResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponseDTO.swift; sourceTree = "<group>"; };
 		F39BA7ED2BB5740D0058257C /* GPTMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTMessageDTO.swift; sourceTree = "<group>"; };
 		F39BA7EF2BB5744E0058257C /* GPTBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTBody.swift; sourceTree = "<group>"; };
@@ -112,6 +110,7 @@
 		B4B3E2BB2B42D1BB00818B3C /* ChatBot */ = {
 			isa = PBXGroup;
 			children = (
+				C7E95AFB2BC5243F0091C03C /* Shared */,
 				C7DE45492BBC26820087C6C3 /* App */,
 				C76D84322BC026BF0060A048 /* Presentation */,
 				C76D84332BC026F20060A048 /* Domain */,
@@ -141,20 +140,11 @@
 			path = Decoder;
 			sourceTree = "<group>";
 		};
-		C76C959B2BC37C5000AB672D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C7E95AEE2BC4D1AF0091C03C /* ChatCollectionList */,
-				C76C959C2BC37D8B00AB672D /* CustomTextFieldView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C76D84322BC026BF0060A048 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C76C959B2BC37C5000AB672D /* View */,
-				C7DE45482BBC26720087C6C3 /* Controller */,
+				C7E95AFF2BC532B30091C03C /* Extensions */,
+				C7E95AF52BC5127D0091C03C /* ChatRoom */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -163,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				C76D84342BC0270E0060A048 /* Entity */,
-				C76D84352BC027180060A048 /* Usecase */,
 				C764C39E2BBFC8A7007AA7B8 /* Mapper */,
 			);
 			path = Domain;
@@ -172,18 +161,9 @@
 		C76D84342BC0270E0060A048 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				C76D84362BC0276F0060A048 /* GPTResponse.swift */,
+				C7E95AF32BC4D6520091C03C /* ChatRoomModel.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		C76D84352BC027180060A048 /* Usecase */ = {
-			isa = PBXGroup;
-			children = (
-				C76D843B2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift */,
-				C76D84382BC0280D0060A048 /* ChatGPTUseCase.swift */,
-			);
-			path = Usecase;
 			sourceTree = "<group>";
 		};
 		C7DE45332BBC18820087C6C3 /* NetworkService */ = {
@@ -234,15 +214,6 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		C7DE45482BBC26720087C6C3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B4B3E2C02B42D1BB00818B3C /* ChatGPTViewController.swift */,
-				C7E95AF12BC4D2A30091C03C /* ChatGPTViewController+Textfield.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		C7DE45492BBC26820087C6C3 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,14 +223,40 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		C7E95AEE2BC4D1AF0091C03C /* ChatCollectionList */ = {
+		C7E95AF52BC5127D0091C03C /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
-				C7E95AEC2BC4D1870091C03C /* ChatGPTCollectionView.swift */,
-				C7E95AEF2BC4D2130091C03C /* ChatBubbleCell.swift */,
-				C7E95AF32BC4D6520091C03C /* ChatDisplayModel.swift */,
+				B4B3E2C02B42D1BB00818B3C /* ChatRoomViewController.swift */,
+				C7E95AEC2BC4D1870091C03C /* ChatRoomView.swift */,
+				C7E95AF72BC5157B0091C03C /* ChatRoomViewModel.swift */,
+				C7E95AF62BC5151A0091C03C /* Cell */,
 			);
-			path = ChatCollectionList;
+			path = ChatRoom;
+			sourceTree = "<group>";
+		};
+		C7E95AF62BC5151A0091C03C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C7E95AEF2BC4D2130091C03C /* ChatRoomCell.swift */,
+				C7E95AF92BC516430091C03C /* ChatRoomCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C7E95AFB2BC5243F0091C03C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C7E95AFC2BC524580091C03C /* ActivityIndicatorView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C7E95AFF2BC532B30091C03C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C7E95B002BC532CE0091C03C /* UITextField+Publisher.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F39BA7EC2BB573BE0058257C /* DTO */ = {
@@ -378,33 +375,32 @@
 				F39BA7EB2BB573B10058257C /* GPTResponseDTO.swift in Sources */,
 				C7DE45472BBC26360087C6C3 /* KeyEnviromentHandler.swift in Sources */,
 				F3D2DF992BBC078000BEECC0 /* RequstInfomation.swift in Sources */,
-				C7E95AF22BC4D2A30091C03C /* ChatGPTViewController+Textfield.swift in Sources */,
 				C764C3A02BBFC8BD007AA7B8 /* Mapper.swift in Sources */,
 				F3D2DF8A2BBBFA9400BEECC0 /* APIHostType.swift in Sources */,
-				C7E95AF42BC4D6520091C03C /* ChatDisplayModel.swift in Sources */,
+				C7E95AF42BC4D6520091C03C /* ChatRoomModel.swift in Sources */,
 				C764C3A32BBFC8EE007AA7B8 /* DataDecodable.swift in Sources */,
-				B4B3E2C12B42D1BB00818B3C /* ChatGPTViewController.swift in Sources */,
-				C76C959D2BC37D8C00AB672D /* CustomTextFieldView.swift in Sources */,
+				C7E95AFA2BC516430091C03C /* ChatRoomCellViewModel.swift in Sources */,
+				B4B3E2C12B42D1BB00818B3C /* ChatRoomViewController.swift in Sources */,
 				F3D2DF972BBC075D00BEECC0 /* RequestProvider.swift in Sources */,
 				F39BA7EE2BB5740D0058257C /* GPTMessageDTO.swift in Sources */,
 				C79F5A432BB5851D009E3AB4 /* GPTRequestDTO.swift in Sources */,
 				F39BA7F02BB5744E0058257C /* GPTBody.swift in Sources */,
 				C764C3A52BBFC8F6007AA7B8 /* DataDecoder.swift in Sources */,
 				F3D2DF922BBBFB2E00BEECC0 /* URLInformation.swift in Sources */,
-				C76D84392BC0280D0060A048 /* ChatGPTUseCase.swift in Sources */,
-				C76D84372BC0276F0060A048 /* GPTResponse.swift in Sources */,
+				C7E95B012BC532CE0091C03C /* UITextField+Publisher.swift in Sources */,
 				B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */,
 				F39BA7F52BB5762B0058257C /* NetworkError.swift in Sources */,
 				F3D2DF8C2BBBFAA900BEECC0 /* SchemeType.swift in Sources */,
-				C7E95AED2BC4D1870091C03C /* ChatGPTCollectionView.swift in Sources */,
+				C7E95AED2BC4D1870091C03C /* ChatRoomView.swift in Sources */,
 				F3D2DF902BBBFB1100BEECC0 /* EndpointProvider.swift in Sources */,
 				C7DE45392BBC196D0087C6C3 /* Requestable.swift in Sources */,
 				B4B3E2BF2B42D1BB00818B3C /* SceneDelegate.swift in Sources */,
 				F3D2DF8E2BBBFAEF00BEECC0 /* EndpointProvidable.swift in Sources */,
+				C7E95AF82BC5157B0091C03C /* ChatRoomViewModel.swift in Sources */,
 				F3D2DF952BBC074600BEECC0 /* RequstProvidable.swift in Sources */,
-				C7E95AF02BC4D2130091C03C /* ChatBubbleCell.swift in Sources */,
+				C7E95AF02BC4D2130091C03C /* ChatRoomCell.swift in Sources */,
 				C764C3A72BBFC90E007AA7B8 /* Mappable.swift in Sources */,
-				C76D843C2BC028FA0060A048 /* ChatGPTUseCaseProtocol.swift in Sources */,
+				C7E95AFD2BC524580091C03C /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
