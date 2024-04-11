@@ -20,4 +20,3 @@ final class NetworkManager: Requestable {
     }
 }
 
-// Publisher -> 우유 -> 아이스크림으로 만들어줘(tryMap) -> 아이스크림

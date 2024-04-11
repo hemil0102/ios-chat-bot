@@ -27,7 +27,7 @@ final class ChatRoomViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .systemPink
+        view.backgroundColor = UIColor(named: "NormalPink")
         contentView.chattingTextField.delegate = self
         setupTableView()
         configureDataSource()

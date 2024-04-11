@@ -15,7 +15,7 @@ final class ChatRoomViewModel {
     @Published private(set) var comments: [ChatRoomModel] = []
     @Published private(set) var state: ChatRoomModelState = .finishedLoading
     private var requestMessage: [Message] = [Message(role: .system, content: 
-    "당신은 이전 대화의 기록을 참고하여서 저의 이름을 항상 기억합니다. 대화 주제는 자유롭습니다.", toolCalls: nil)]
+    "질문은 유저와 GPT나 나눈 대화 이력이 들어있습니다. 항상 마지막 질문이 지금 물어보는 것이니 이전 기록을 잘 참고해서 자연스럽게 대화를 이어가주세요. 마치 오랜 친구처럼요", toolCalls: nil)]
     
     private let mapper: Mappable
     private var bindings = Set<AnyCancellable>()

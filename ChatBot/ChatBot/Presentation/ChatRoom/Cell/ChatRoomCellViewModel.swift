@@ -4,6 +4,7 @@ import Combine
 final class ChatRoomCellViewModel {
     // 값이 변경되면 감지하는 옵저버를 달아준다.
     @Published var contentMessage: String = ""
+    @Published var contentRole: Role = .user
         
     private let message: ChatRoomModel
     
@@ -16,5 +17,6 @@ final class ChatRoomCellViewModel {
     private func setupBinding() {
     //contentMessage가 message.content로부터 값을 받고 변경되었을 때 구독하는 곳에서 변화를 감지할 수 있을 것이다. 
         contentMessage = message.content
+        contentRole = message.role
     }
 }
