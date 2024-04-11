@@ -20,9 +20,8 @@ final class ChatRoomCell: UICollectionViewListCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        contentLabel.text = ""
-        chatBubble.backgroundColor = nil
-        chatBubble.translatesAutoresizingMaskIntoConstraints = true
+        contentLabel.removeFromSuperview()
+        chatBubble.removeFromSuperview()
     }
     
     private func setupGPTConstraints() {

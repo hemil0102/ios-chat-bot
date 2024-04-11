@@ -82,3 +82,5 @@ final class ChatRoomView: UIView {
         return UICollectionViewCompositionalLayout(section: section)
     }
 }
+
+

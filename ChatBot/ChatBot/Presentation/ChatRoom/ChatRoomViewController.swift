@@ -125,8 +125,10 @@ extension ChatRoomViewController {
 
 extension ChatRoomViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         contentView.chattingTextField.resignFirstResponder()
         contentView.chattingTextField.text = ""
+        
         return true
     }
 }
