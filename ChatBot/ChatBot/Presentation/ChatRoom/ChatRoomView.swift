@@ -2,14 +2,28 @@ import UIKit
 
 final class ChatRoomView: UIView {
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-    lazy var chattingTextField = UITextField()
+    lazy var chattingTextField = UITextView()
     lazy var activityIndicationView = ActivityIndicatorView(style: .medium)
+    lazy var sendButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "pencil"), for: .normal)
+        
+        return button
+    }()
+    lazy var textStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        return stackView
+    }()
     
     init() {
         super.init(frame: .zero)
         addSubviews()
         setupConstraints()
         setupViews()
+        hideKeyboardWhenTappedAround()
     }
     
     required init?(coder: NSCoder) {
@@ -17,7 +31,11 @@ final class ChatRoomView: UIView {
     }
     
     private func addSubviews() {
-        let subviews = [collectionView, chattingTextField, activityIndicationView]
+        
+        textStackView.addArrangedSubview(chattingTextField)
+        textStackView.addArrangedSubview(sendButton)
+        
+        let subviews = [collectionView, textStackView, activityIndicationView]
         
         subviews.forEach {
             addSubview($0)
@@ -28,6 +46,7 @@ final class ChatRoomView: UIView {
     func startLoading() {
         collectionView.isUserInteractionEnabled = false
         chattingTextField.isUserInteractionEnabled = false
+        collectionView.keyboardDismissMode = .interactive
         
         activityIndicationView.isHidden = false
         activityIndicationView.startAnimating()
@@ -47,11 +66,11 @@ final class ChatRoomView: UIView {
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: defaultMargin),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: chattingTextField.topAnchor, constant: 20),
-            chattingTextField.heightAnchor.constraint(equalToConstant: 40),
-            chattingTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: defaultMargin),
-            chattingTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -defaultMargin),
-            chattingTextField.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: textStackView.topAnchor, constant: 20),
+            textStackView.heightAnchor.constraint(equalToConstant: 40),
+            textStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: defaultMargin),
+            textStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -defaultMargin),
+            textStackView.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor),
             activityIndicationView.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicationView.centerYAnchor.constraint(equalTo: centerYAnchor),
             activityIndicationView.heightAnchor.constraint(equalToConstant: 50),
@@ -62,10 +81,14 @@ final class ChatRoomView: UIView {
     private func setupViews() {
         collectionView.backgroundColor = .systemBackground
         
+        chattingTextField.font = .preferredFont(forTextStyle: .body)
+        chattingTextField.layer.borderWidth = 1
+        chattingTextField.layer.borderColor = UIColor.gray.cgColor
+        chattingTextField.layer.cornerRadius = 20
         chattingTextField.autocorrectionType = .no
         chattingTextField.backgroundColor = .systemBackground
-        chattingTextField.borderStyle = .roundedRect
-        chattingTextField.placeholder = "Please type something"
+//        chattingTextField.borderStyle = .roundedRect
+//        chattingTextField.placeholder = "Please type something"
     }
 
     //UICollectionLayoutListConfiguration 다시 보고 list 형식으로 구현
@@ -83,4 +106,14 @@ final class ChatRoomView: UIView {
     }
 }
 
-
+extension ChatRoomView {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.endEditing(true)
+    }
+}

@@ -28,7 +28,7 @@ final class ChatRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(named: "NormalPink")
-        contentView.chattingTextField.delegate = self
+//        contentView.chattingTextField.delegate = self
         setupTableView()
         configureDataSource()
         setupBindings()
@@ -42,16 +42,16 @@ final class ChatRoomViewController: UIViewController {
     
     private func setupBindings() {
         func bindViewToViewModel() {
-            contentView.chattingTextField.textPublisher
-                .debounce(for: 0.5, scheduler: RunLoop.main) // 이게 뭔지 공부하자
-                .removeDuplicates()
-                .sink { [weak self] query in
-                    guard let self = self else { return }
-                    history += "UserQuestion\(count): \(query)" + " "
-                    print("히스토리: \(history)")
-                    viewModel.askQuestion(query: query, history: history)
-                }
-                .store(in: &bindings)
+//            contentView.chattingTextField.textPublisher
+//                .debounce(for: 0.5, scheduler: RunLoop.main) 
+//                .removeDuplicates()
+//                .sink { [weak self] query in
+//                    guard let self = self else { return }
+//                    history += "UserQuestion\(count): \(query)" + " "
+//                    print("히스토리: \(history)")
+//                    viewModel.askQuestion(query: query, history: history)
+//                }
+//                .store(in: &bindings)
         }
         
         func bindViewModelToView() {

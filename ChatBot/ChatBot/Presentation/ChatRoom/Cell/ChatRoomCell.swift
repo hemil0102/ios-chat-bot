@@ -72,6 +72,7 @@ final class ChatRoomCell: UICollectionViewListCell {
         contentLabel.text = viewModel.contentMessage
         contentLabel.numberOfLines = 0
         let labelSize = contentLabel.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        print(labelSize)
         contentLabel.frame.size = labelSize
         
         if viewModel.contentRole == .user {
