@@ -7,11 +7,13 @@ final class ChatRoomCell: UICollectionViewListCell {
         didSet { setupViewModel() }
     }
 
-    lazy var contentLabel = UILabel()
-    lazy var chatBubble = UIView()
+    
+    var bubbleView = ChatBubbleView()
+    var leadingOrTrailingConstraint = NSLayoutConstraint()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
@@ -20,66 +22,35 @@ final class ChatRoomCell: UICollectionViewListCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        contentLabel.removeFromSuperview()
-        chatBubble.removeFromSuperview()
+        commonInit()
     }
     
-    private func setupGPTConstraints() {
-        chatBubble.backgroundColor = UIColor(named: "NormalPink")
-        chatBubble.layer.cornerRadius = 10
-        chatBubble.translatesAutoresizingMaskIntoConstraints = false
-        contentLabel.translatesAutoresizingMaskIntoConstraints = false
+    private func commonInit() {
+        bubbleView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(bubbleView)
         
-        chatBubble.addSubview(contentLabel)
-        contentView.addSubview(chatBubble)
-
         NSLayoutConstraint.activate([
-            chatBubble.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            chatBubble.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            chatBubble.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
-            chatBubble.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-
-            contentLabel.topAnchor.constraint(equalTo: chatBubble.topAnchor, constant: 10),
-            contentLabel.leadingAnchor.constraint(equalTo: chatBubble.leadingAnchor, constant: 10),
-            contentLabel.trailingAnchor.constraint(equalTo: chatBubble.trailingAnchor, constant: -10),
-            contentLabel.bottomAnchor.constraint(equalTo: chatBubble.bottomAnchor, constant: -10)
-        ])
-    }
-    
-    private func setupUserConstraints() {
-        chatBubble.backgroundColor = UIColor(named: "SunshineYellow")
-        chatBubble.layer.cornerRadius = 10
-        chatBubble.translatesAutoresizingMaskIntoConstraints = false
-        contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        chatBubble.addSubview(contentLabel)
-        contentView.addSubview(chatBubble)
-
-        NSLayoutConstraint.activate([
-            chatBubble.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            chatBubble.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
-            chatBubble.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            chatBubble.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-
-            contentLabel.topAnchor.constraint(equalTo: chatBubble.topAnchor, constant: 10),
-            contentLabel.leadingAnchor.constraint(equalTo: chatBubble.leadingAnchor, constant: 10),
-            contentLabel.trailingAnchor.constraint(equalTo: chatBubble.trailingAnchor, constant: -10),
-            contentLabel.bottomAnchor.constraint(equalTo: chatBubble.bottomAnchor, constant: -10)
+            bubbleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0),
+            bubbleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12.0),
+            bubbleView.widthAnchor.constraint(lessThanOrEqualTo: contentView.widthAnchor, multiplier: 0.66)
         ])
     }
     
     private func setupViewModel() {
-        contentLabel.text = viewModel.contentMessage
-        contentLabel.numberOfLines = 0
-        let labelSize = contentLabel.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
-        print(labelSize)
-        contentLabel.frame.size = labelSize
         
+        bubbleView.chatLabel.text = viewModel.contentMessage
+        
+        // tell the bubble view whether it's an incoming or outgoing message
+        bubbleView.outcoming = viewModel.contentRole
+
+        leadingOrTrailingConstraint.isActive = false
         if viewModel.contentRole == .user {
-            setupUserConstraints()
+            leadingOrTrailingConstraint = bubbleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12.0)
         } else {
-            setupGPTConstraints()
+            leadingOrTrailingConstraint = bubbleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0)
         }
+        leadingOrTrailingConstraint.isActive = true
     }
+
 }
     

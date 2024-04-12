@@ -16,6 +16,7 @@
 		C764C3A32BBFC8EE007AA7B8 /* DataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A22BBFC8EE007AA7B8 /* DataDecodable.swift */; };
 		C764C3A52BBFC8F6007AA7B8 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A42BBFC8F6007AA7B8 /* DataDecoder.swift */; };
 		C764C3A72BBFC90E007AA7B8 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C3A62BBFC90E007AA7B8 /* Mappable.swift */; };
+		C77BCB692BC8F36500DC220B /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BCB682BC8F36500DC220B /* ChatBubbleView.swift */; };
 		C79F5A432BB5851D009E3AB4 /* GPTRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F5A422BB5851D009E3AB4 /* GPTRequestDTO.swift */; };
 		C7DE45392BBC196D0087C6C3 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE45382BBC196D0087C6C3 /* Requestable.swift */; };
 		C7DE453B2BBC19820087C6C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE453A2BBC19820087C6C3 /* NetworkManager.swift */; };
@@ -27,7 +28,6 @@
 		C7E95AF82BC5157B0091C03C /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF72BC5157B0091C03C /* ChatRoomViewModel.swift */; };
 		C7E95AFA2BC516430091C03C /* ChatRoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AF92BC516430091C03C /* ChatRoomCellViewModel.swift */; };
 		C7E95AFD2BC524580091C03C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95AFC2BC524580091C03C /* ActivityIndicatorView.swift */; };
-		C7E95B012BC532CE0091C03C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E95B002BC532CE0091C03C /* UITextField+Publisher.swift */; };
 		F39BA7EB2BB573B10058257C /* GPTResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BA7EA2BB573B10058257C /* GPTResponseDTO.swift */; };
 		F39BA7EE2BB5740D0058257C /* GPTMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BA7ED2BB5740D0058257C /* GPTMessageDTO.swift */; };
 		F39BA7F02BB5744E0058257C /* GPTBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39BA7EF2BB5744E0058257C /* GPTBody.swift */; };
@@ -72,6 +72,7 @@
 		C764C3A22BBFC8EE007AA7B8 /* DataDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecodable.swift; sourceTree = "<group>"; };
 		C764C3A42BBFC8F6007AA7B8 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		C764C3A62BBFC90E007AA7B8 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		C77BCB682BC8F36500DC220B /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		C79F5A422BB5851D009E3AB4 /* GPTRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTRequestDTO.swift; sourceTree = "<group>"; };
 		C7DE45382BBC196D0087C6C3 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		C7DE453A2BBC19820087C6C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		C7E95AF72BC5157B0091C03C /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
 		C7E95AF92BC516430091C03C /* ChatRoomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCellViewModel.swift; sourceTree = "<group>"; };
 		C7E95AFC2BC524580091C03C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
-		C7E95B002BC532CE0091C03C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		F39BA7EA2BB573B10058257C /* GPTResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponseDTO.swift; sourceTree = "<group>"; };
 		F39BA7ED2BB5740D0058257C /* GPTMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTMessageDTO.swift; sourceTree = "<group>"; };
 		F39BA7EF2BB5744E0058257C /* GPTBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTBody.swift; sourceTree = "<group>"; };
@@ -182,7 +182,6 @@
 		C76D84322BC026BF0060A048 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C7E95AFF2BC532B30091C03C /* Extensions */,
 				C7E95AF52BC5127D0091C03C /* ChatRoom */,
 			);
 			path = Presentation;
@@ -276,6 +275,7 @@
 		C7E95AF62BC5151A0091C03C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C77BCB682BC8F36500DC220B /* ChatBubbleView.swift */,
 				C7E95AEF2BC4D2130091C03C /* ChatRoomCell.swift */,
 				C7E95AF92BC516430091C03C /* ChatRoomCellViewModel.swift */,
 			);
@@ -288,14 +288,6 @@
 				C7E95AFC2BC524580091C03C /* ActivityIndicatorView.swift */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		C7E95AFF2BC532B30091C03C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				C7E95B002BC532CE0091C03C /* UITextField+Publisher.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F39BA7EC2BB573BE0058257C /* DTO */ = {
@@ -420,6 +412,7 @@
 				C7E95AF42BC4D6520091C03C /* ChatRoomModel.swift in Sources */,
 				C764C3A32BBFC8EE007AA7B8 /* DataDecodable.swift in Sources */,
 				C7E95AFA2BC516430091C03C /* ChatRoomCellViewModel.swift in Sources */,
+				C77BCB692BC8F36500DC220B /* ChatBubbleView.swift in Sources */,
 				B4B3E2C12B42D1BB00818B3C /* ChatRoomViewController.swift in Sources */,
 				F3D2DF972BBC075D00BEECC0 /* RequestProvider.swift in Sources */,
 				F39BA7EE2BB5740D0058257C /* GPTMessageDTO.swift in Sources */,
@@ -427,7 +420,6 @@
 				F39BA7F02BB5744E0058257C /* GPTBody.swift in Sources */,
 				C764C3A52BBFC8F6007AA7B8 /* DataDecoder.swift in Sources */,
 				F3D2DF922BBBFB2E00BEECC0 /* URLInformation.swift in Sources */,
-				C7E95B012BC532CE0091C03C /* UITextField+Publisher.swift in Sources */,
 				B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */,
 				F39BA7F52BB5762B0058257C /* NetworkError.swift in Sources */,
 				F3D2DF8C2BBBFAA900BEECC0 /* SchemeType.swift in Sources */,

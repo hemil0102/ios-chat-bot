@@ -28,7 +28,7 @@ final class ChatRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor(named: "NormalPink")
-//        contentView.chattingTextField.delegate = self
+        initButton()
         setupTableView()
         configureDataSource()
         setupBindings()
@@ -40,20 +40,20 @@ final class ChatRoomViewController: UIViewController {
         contentView.collectionView.allowsSelection = false
     }
     
-    private func setupBindings() {
-        func bindViewToViewModel() {
-//            contentView.chattingTextField.textPublisher
-//                .debounce(for: 0.5, scheduler: RunLoop.main) 
-//                .removeDuplicates()
-//                .sink { [weak self] query in
-//                    guard let self = self else { return }
-//                    history += "UserQuestion\(count): \(query)" + " "
-//                    print("히스토리: \(history)")
-//                    viewModel.askQuestion(query: query, history: history)
-//                }
-//                .store(in: &bindings)
-        }
+    func initButton() {
+        contentView.sendButton.addTarget(self, action: #selector(questionTest), for: .touchUpInside)
+    }
+   
+    
+    @objc func questionTest() {
+        guard let query = contentView.chattingTextView.text else { return }
+        history += "UserQuestion\(count): \(query)" + " "
+        viewModel.askQuestion(query: query, history: history)
+        contentView.chattingTextView.text = ""
         
+    }
+    
+    private func setupBindings() {
         func bindViewModelToView() {
             viewModel.$comments
                 .receive(on: RunLoop.main)
@@ -87,7 +87,6 @@ final class ChatRoomViewController: UIViewController {
                 .store(in: &bindings)
         }
         
-        bindViewToViewModel()
         bindViewModelToView()
     }
     
@@ -105,6 +104,9 @@ final class ChatRoomViewController: UIViewController {
         snapshot.appendSections([.chat])
         snapshot.appendItems(viewModel.comments)
         dataSource.apply(snapshot, animatingDifferences: true)
+        guard let newItem = viewModel.comments.last,
+              let index = dataSource.indexPath(for: newItem) else { return }
+        contentView.collectionView.scrollToItem(at: index, at: .bottom, animated: true)
     }
 }
 
@@ -123,12 +125,4 @@ extension ChatRoomViewController {
     }
 }
 
-extension ChatRoomViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        contentView.chattingTextField.resignFirstResponder()
-        contentView.chattingTextField.text = ""
-        
-        return true
-    }
-}
+
