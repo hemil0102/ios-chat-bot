@@ -105,6 +105,10 @@ final class ChatRoomViewController: UIViewController {
         snapshot.appendSections([.chat])
         snapshot.appendItems(viewModel.comments)
         dataSource.apply(snapshot, animatingDifferences: true)
+        guard let newItem = viewModel.comments.last,
+              let index = dataSource.indexPath(for: newItem) else { return }
+        contentView.collectionView.scrollToItem(at: index, at: .bottom, animated: true)
+        print("~!@~#@$!#$@#~!@~!#~@$!$ 새로 그려라 ++++\(index.item)++++ ~!@~~@$~@#~@#!@$!@$")
     }
 }
 

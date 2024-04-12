@@ -3,14 +3,13 @@ import Combine
 
 final class ChatRoomCellViewModel {
     // 값이 변경되면 감지하는 옵저버를 달아준다.
-    @Published var contentMessage: String = ""
-    @Published var contentRole: Role = .user
+    var contentMessage: String = ""
+    var contentRole: Role = .user
         
     private let message: ChatRoomModel
     
     init(message: ChatRoomModel) {
         self.message = message
-        
         setupBinding()
     }
     

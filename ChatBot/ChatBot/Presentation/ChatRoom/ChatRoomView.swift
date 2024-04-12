@@ -47,11 +47,13 @@ final class ChatRoomView: UIView {
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: defaultMargin),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: chattingTextField.topAnchor, constant: 20),
+            collectionView.bottomAnchor.constraint(equalTo: chattingTextField.topAnchor, constant: -10),
+            
             chattingTextField.heightAnchor.constraint(equalToConstant: 40),
-            chattingTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: defaultMargin),
-            chattingTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -defaultMargin),
-            chattingTextField.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor),
+            chattingTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            chattingTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            chattingTextField.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor, constant: -10),
+            
             activityIndicationView.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicationView.centerYAnchor.constraint(equalTo: centerYAnchor),
             activityIndicationView.heightAnchor.constraint(equalToConstant: 50),
